@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Notified &centerdot; Sign In</title>
+  </head>
+  <body
+    class="scrollbar-thumb-rounded-full scrollbar-track-rounded-full overflow-x-hidden overflow-y-scroll bg-lightBg text-lightText scrollbar-thin scrollbar-thumb-darkBg scrollbar-corner-transparent dark:bg-darkBg dark:text-darkText dark:scrollbar-thumb-lightBg"
+  >
+    <div class="block w-full">
+      <div
+        id="errorAlert"
+        class="font-regular absolute mb-4 hidden w-full animate-fade rounded-lg bg-red-500 p-4 text-base leading-5 text-white opacity-100"
+      >
+        An error alert for showing message.
+      </div>
+      <div
+        id="successAlert"
+        class="font-regular absolute mb-4 hidden w-full animate-fade rounded-lg bg-green-500 p-4 text-base leading-5 text-white opacity-100"
+      >
+        A success alert for showing message.
+      </div>
+    </div>
+
+    <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+      <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+        <svg
+          class="mx-auto h-10 w-auto fill-black hover:animate-spin dark:fill-white"
+          viewBox="0 0 1920 1920"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              d="m1783.68 1468.235-315.445 315.445v-315.445h315.445Zm-541.327-338.823v112.94h-903.53v-112.94h903.53Zm338.936-338.824V903.53H338.824V790.59h1242.465ZM621.176 0c93.403 0 169.412 76.01 169.412 169.412 0 26.09-6.437 50.484-16.94 72.62L999.98 468.255l-79.962 79.962-226.221-226.334c-22.137 10.504-46.532 16.942-72.622 16.942-93.402 0-169.411-76.01-169.411-169.412C451.765 76.009 527.775 0 621.176 0Zm395.295 225.882v112.942h790.588v1016.47h-451.765v451.765H112.941V338.824h225.883V225.882H0V1920h1421.478c45.176 0 87.755-17.619 119.717-49.581l329.224-329.11c31.962-32.076 49.581-74.655 49.581-119.831V225.882h-903.53Z"
+              fill-rule="evenodd"
+            ></path>
+          </g>
+        </svg>
+
+        <h3
+          class="text-center text-2xl font-bold leading-9 text-lightText dark:text-darkText"
+        >
+          Notefied
+        </h3>
+        <h2
+          id="signText"
+          class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-darkBg dark:text-lightBg"
+        >
+          Sign in to your account
+        </h2>
+      </div>
+
+      <div id="loginForm" class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <form class="space-y-6" action="#" method="POST">
+          <div>
+            <label
+              for="username"
+              class="block text-sm font-medium leading-6 text-darkBg dark:text-lightBg"
+            >
+              Username
+            </label>
+            <div class="mt-2">
+              <input
+                id="username"
+                name="username"
+                type="username"
+                autocomplete="username"
+                required
+                class="block w-full rounded-md border-0 py-1.5 text-center text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between">
+              <label
+                for="password"
+                class="block text-center text-sm font-medium leading-6 text-darkBg dark:text-lightBg"
+                >Password</label
+              >
+            </div>
+            <div class="mt-2">
+              <input
+                id="password"
+                name="password"
+                type="password"
+                autocomplete="current-password"
+                required
+                class="block w-full rounded-md border-0 py-1.5 text-center text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+
+          <div>
+            <button
+              id="loginButton"
+              type="submit"
+              class="flex w-full justify-center rounded-md bg-darkSecondary px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
+              Log In
+            </button>
+          </div>
+        </form>
+
+        <p class="mt-10 text-center text-sm text-lightText dark:text-darkText">
+          Not a member?
+          <a
+            href="#"
+            id="registerSwitch"
+            class="font-semibold leading-6 text-darkSecondary hover:text-lightText dark:hover:text-darkText"
+            >Register now!</a
+          >
+        </p>
+      </div>
+
+      <div
+        id="registerForm"
+        class="mt-10 hidden sm:mx-auto sm:w-full sm:max-w-sm"
+      >
+        <form class="space-y-6" action="#" method="POST">
+          <div>
+            <label
+              for="registerUsername"
+              class="block text-center text-sm font-medium leading-6 text-darkBg dark:text-lightBg"
+              >Username</label
+            >
+            <div class="mt-2">
+              <input
+                id="registerUsername"
+                name="username"
+                type="username"
+                autocomplete="username"
+                required
+                class="block w-full rounded-md border-0 py-1.5 text-center text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between">
+              <label
+                for="password"
+                class="block text-sm font-medium leading-6 text-darkBg dark:text-lightBg"
+                >Password</label
+              >
+            </div>
+            <div class="mt-2">
+              <input
+                id="registerPassword"
+                name="password"
+                type="password"
+                autocomplete="current-password"
+                required
+                class="block w-full rounded-md border-0 py-1.5 text-center text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between">
+              <label
+                for="passwordConfirm"
+                class="block text-sm font-medium leading-6 text-darkBg dark:text-lightBg"
+                >Confirm Password</label
+              >
+            </div>
+            <div class="mt-2">
+              <input
+                id="registerPasswordConfirm"
+                name="passwordConfirm"
+                type="password"
+                autocomplete="current-password"
+                required
+                class="block w-full rounded-md border-0 py-1.5 text-center text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+
+          <div>
+            <button
+              id="registerButton"
+              type="submit"
+              class="flex w-full justify-center rounded-md bg-darkSecondary px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
+              Register
+            </button>
+          </div>
+        </form>
+
+        <p class="mt-10 text-center text-sm text-lightText dark:text-darkText">
+          Already registered?
+          <a
+            href="#"
+            id="loginSwitch"
+            class="font-semibold leading-6 text-darkSecondary hover:text-lightText dark:hover:text-darkText"
+            >Login here!</a
+          >
+        </p>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="js/login.js"></script>
+</html>

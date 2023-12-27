@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Notified &centerdot; Home Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="codemirror/lib/codemirror.js"></script>
+    <link rel="stylesheet" href="codemirror/lib/codemirror.css" />
+    <script src="codemirror/mode/xml/xml.js"></script>
+    <link rel="stylesheet" href="codemirror/theme/monokai.css" />
+    <script src="codemirror/addon/edit/closetag.js"></script>
+    <script src="codemirror/addon/edit/matchbrackets.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  </head>
+  <body
+    class="scrollbar-thumb-rounded-full scrollbar-track-rounded-full flex h-screen flex-col overflow-y-scroll bg-lightBg text-lightText scrollbar-thin scrollbar-thumb-darkBg scrollbar-corner-transparent dark:bg-darkBg dark:text-darkText dark:scrollbar-thumb-lightBg md:flex-row md:overflow-y-hidden"
+  >
+    <div class="w-scren flex-shrink-0 bg-gray-800 p-4 text-darkText md:w-64">
+      <div class="text-2xl font-semibold">Notified</div>
+      <ul id="buttonContainer" class="mt-4">
+        <li class="mb-2 w-full">
+          <a
+            class="active block cursor-pointer rounded px-4 py-2 hover:bg-gray-700"
+            >Home</a
+          >
+        </li>
+        <li class="mb-2">
+          <a
+            class="block cursor-pointer rounded px-4 py-2 hover:bg-gray-700"
+            onclick="noteButtons(this.innerText)"
+            >Settings</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div
+      id="mainContainer"
+      class="scrollbar-thumb-rounded-full scrollbar-track-rounded-full l flex-1 p-4 scrollbar-thin scrollbar-thumb-darkBg scrollbar-corner-transparent dark:scrollbar-thumb-lightBg"
+    ></div>
+  </body>
+  <script src="js/notes.js"></script>
+</html>

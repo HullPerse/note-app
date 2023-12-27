@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>error</title>
+  </head>
+  <body
+    class="scrollbar-thumb-rounded-full scrollbar-track-rounded-full overflow-y-scroll bg-lightBg text-lightText scrollbar-thin scrollbar-thumb-darkBg scrollbar-corner-transparent dark:bg-darkBg dark:text-darkText dark:scrollbar-thumb-lightBg"
+  >
+    <main class="py-25 sm:py-30 h-full place-items-center px-5 lg:px-5">
+      <div class="text-center">
+        <p class="text-base font-bold text-lightText dark:text-darkText">400</p>
+        <h1
+          class="mt-4 text-3xl font-bold tracking-tight text-lightText dark:text-darkText sm:text-5xl"
+        >
+          Page not found
+        </h1>
+        <p class="mt-6 text-base leading-7 text-lightText dark:text-darkText">
+          Sorry, we couldn't find the page you're looking for.
+        </p>
+        <div class="mt-10 flex items-center justify-center gap-x-6">
+          <a
+            href="./"
+            class="rounded-md bg-lightSecondary px-3 py-2 text-sm font-semibold text-white shadow-sm dark:bg-darkSecondary"
+            >Go back home</a
+          >
+        </div>
+      </div>
+    </main>
+  </body>
+  <script>
+    const user = localStorage.getItem('user');
+    const colorPreference = JSON.parse(user).colorPreference;
+  
+    const html = document.getElementsByTagName('html')[0];
+  
+    if (colorPreference === 'Dark') {
+      html.classList.add('dark');
+    } else if (html.classList.contains('dark')) {
+      html.classList.remove('dark')
+    }
+  </script>
+</html>
